@@ -1,0 +1,25 @@
+BeCheckers README
+
+Author:		Jeremy J. Gibbons, jeremy.gibbons@asu.edu
+Version:		1.0.0
+Released:		1 September 2000
+
+About BeCheckers:
+BeCheckers is a simple checkers game developed for two players.  The game conforms to almost all ACF (American Checker Federation) rules, including:
+
+	*	No huffs (one must complete all jumps in a jump sequence)
+	*	Forced jumping
+	*	Men can jump Kings (some people play men cannot jump kings)
+	*	Official color scheme (Buff/Green checkerboard and Red/White checkers)
+	*	All other primitive movements
+
+Revision History:
+Version		Release Date		Changes
+
+0.9.0			19 Sep 1999		- Alpha Release
+
+1.0.0			01 Sep 2000		- Open implemented
+							- Save/Save As implemented
+							- Source code made public
+							- Icon enhancements
+							- Minor code enhancements
