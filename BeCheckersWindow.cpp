@@ -75,7 +75,7 @@ char * BeCheckersWindow::CreateFileName() {
 
 void BeCheckersWindow::OpenGame(const char *file) {
 	int x, y, cjx, cjy, prevDist;
-	bool color, rank, turn, jumpAvailable;
+	int color, rank, turn, jumpAvailable;
 
 	ifstream inGame(file, ios::in);
 	if(!inGame)
@@ -91,14 +91,14 @@ void BeCheckersWindow::OpenGame(const char *file) {
 
 		inGame >> turn >> prevDist >> jumpAvailable >> cjx >> cjy;
 		while(inGame >> x >> y >> color >> rank)
-			cb->AddChild(new Checker(color, x, y, rank));
+			cb->AddChild(new Checker((bool)color, x, y, (bool)rank));
 
 		if(BPoint(cjx, cjy) != B_ORIGIN)
 			Checker::SetCheckerJumping(((Checker *)cb->ChildAt(0))->CheckerAt(BPoint(cjx, cjy)));
 
-		Checker::SetTurn(turn);
+		Checker::SetTurn((bool)turn);
 		Checker::SetPrevDist(prevDist);
-		Checker::SetJumpAvailable(jumpAvailable);
+		Checker::SetJumpAvailable((bool)jumpAvailable);
 		mvIndicationLabel->SetText(turn == DARK ? "Dark to move" : "Light to move");
 	}
 }
