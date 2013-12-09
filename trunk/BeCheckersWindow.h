@@ -10,7 +10,7 @@
 #define _BECHECKERSWINDOW_H
 
 #include <fstream.h>
-#include <string.h>
+#include <String.h>
 #include <stdio.h>
 #include <time.h>
 
@@ -18,6 +18,7 @@
 #include <Button.h>
 #include <Directory.h>
 #include <Entry.h>
+#include <FindDirectory.h>
 #include <ListItem.h>
 #include <ListView.h>
 #include <MenuBar.h>
