@@ -46,13 +46,14 @@ void BeCheckersWindow::AboutRequested() {
 char * BeCheckersWindow::File(const char *fileName) {
 	char *f;
 
-	app_info appInfo;
-	be_app->GetAppInfo(&appInfo);
+	BPath p;
+	find_directory(B_USER_DIRECTORY, &p);
 
-	BEntry entry(&(appInfo.ref));
-	BDirectory dir;
-	entry.GetParent(&dir);
-	BPath p(&dir, APP_SGP);
+	BString path;
+	path.SetTo(p.Path()).Append("/").Append(APP_SGP);
+	create_directory(path.String(), 0777);
+
+	p.SetTo(path.String());
 
     if(p.Path() != NULL) {
 		f = new char[strlen(p.Path()) + strlen(fileName) + 6] = {'\0'};
@@ -127,13 +128,12 @@ void BeCheckersWindow::SaveGame(const char *file) {
 
 void BeCheckersWindow::SavedGames(BListView *list) {
 	char name[B_FILE_NAME_LENGTH];
-	app_info appInfo;
 
-	be_app->GetAppInfo(&appInfo);
-	BEntry entry(&(appInfo.ref));
+	BEntry entry;
 	BDirectory dir;
-	entry.GetParent(&dir);
-	BPath p(&dir, APP_SGP);
+	BPath p;
+	find_directory(B_USER_DIRECTORY, &p);
+	p.Append(APP_SGP);
 
 	dir.SetTo(p.Path());
 	dir.Rewind();

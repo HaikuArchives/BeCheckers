@@ -17,7 +17,7 @@
 #define APP_SIG "application/x-vnd.JGibbons-BeCheckers"		// Signature
 
 #define APP_XTN ".bcsg"										// File extension for saved games
-#define APP_SGP "./Data/SavedGames"							// Subdirectory for saved games
+#define APP_SGP "./BeCheckers/SavedGames"					// Subdirectory for saved games
 
 /*----------------------------------------------------------------*/
 /*----- BeCheckers class -----------------------------------------*/
