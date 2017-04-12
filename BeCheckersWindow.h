@@ -9,7 +9,7 @@
 #ifndef _BECHECKERSWINDOW_H
 #define _BECHECKERSWINDOW_H
 
-#include <fstream.h>
+#include <fstream>
 #include <String.h>
 #include <stdio.h>
 #include <time.h>
@@ -33,6 +33,8 @@
 #include "BeCheckers.h"
 #include "Checker.h"
 #include "CheckerBoard.h"
+
+using namespace std;
 
 /* Menuitem message constants */
 

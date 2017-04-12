@@ -56,7 +56,8 @@ char * BeCheckersWindow::File(const char *fileName) {
 	p.SetTo(path.String());
 
     if(p.Path() != NULL) {
-		f = new char[strlen(p.Path()) + strlen(fileName) + 6] = {'\0'};
+		f = new char[strlen(p.Path()) + strlen(fileName) + 6];
+		memset(f, '\0', strlen(p.Path()) + strlen(fileName) + 6);
 		sprintf(f, "%s%s%s%s", p.Path(), "/", fileName, APP_XTN);	// Thanks, Charlie.
 	}
 
@@ -68,7 +69,8 @@ char * BeCheckersWindow::CreateFileName() {
 	time(&now);
 
 	char *time = asctime(localtime(&now));
-	char *fn = new char[strlen(time)] = {'\0'};
+	char *fn = new char[strlen(time)];
+	memset(fn, '\0', strlen(time));
 
 	strcat(fn, strtok(time, "\n"));
 	return fn;
